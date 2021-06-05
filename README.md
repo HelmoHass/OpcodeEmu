@@ -21,9 +21,9 @@ To Compile
 
 `git clone https://github.com/HelmoHass/Opcode-Emu`
 
-`cp -r $HOME/Lilu/build/Debug/Lilu.kext $HOME/OpcodeEmulator`
+`cp -r $HOME/Lilu/build/Debug/Lilu.kext $HOME/Opcode-Emu`
 
-`cd OpcodeEmulator && git clone https://github.com/acidanthera/MacKernelSDK`
+`cd Opcode-Emu && git clone https://github.com/acidanthera/MacKernelSDK`
 
 `xcodebuild -project ./OpcodeEmulator.xcodeproj -configuration Release clean build ARCHS=x86_64 ONLY_ACTIVE_ARCH=YES`
 #
