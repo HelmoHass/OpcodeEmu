@@ -19,7 +19,7 @@ To Compile
 #
 - OpcodeEmulator
 
-`git clone https://github.com/LAbyOne/OpcodeEmulator`
+`git clone https://github.com/HelmoHass/Opcode-Emu`
 
 `cp -r $HOME/Lilu/build/Debug/Lilu.kext $HOME/OpcodeEmulator`
 
