@@ -17,7 +17,7 @@ To Compile
 
 `cd Lilu && git clone https://github.com/acidanthera/MacKernelSDK`
 
-`xcodebuild -project ./Lilu/Lilu.xcodeproj -configuration Debug clean build ARCHS=x86_64 ONLY_ACTIVE_ARCH=YES`
+`xcodebuild -project ./Lilu.xcodeproj -configuration Debug clean build ARCHS=x86_64 ONLY_ACTIVE_ARCH=YES`
 #
 - OpcodeEmulator
 
