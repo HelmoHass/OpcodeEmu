@@ -15,13 +15,19 @@ To Compile
 
 `git clone https://github.com/acidanthera/Lilu`
 
+`cd Lilu && git clone https://github.com/acidanthera/MacKernelSDK`
+
 `xcodebuild -project ./Lilu/Lilu.xcodeproj -configuration Debug clean build ARCHS=x86_64 ONLY_ACTIVE_ARCH=YES`
 #
 - OpcodeEmulator
 
+`cd ..`
+
 `git clone https://github.com/HelmoHass/Opcode-Emu`
 
-`cp -r $HOME/Lilu/build/Debug/Lilu.kext $HOME/Opcode-Emu`
+`cp -Rf $HOME/Lilu/build/Debug/Lilu.kext $HOME/Opcode-Emu`
+
+`cp -Rf $HOME/Lilu/MacKernelSDK $HOME/Opcode-Emu`
 
 `cd Opcode-Emu && git clone https://github.com/acidanthera/MacKernelSDK`
 
