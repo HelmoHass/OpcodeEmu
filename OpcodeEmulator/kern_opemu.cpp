@@ -6,7 +6,7 @@
 //  Copyright © 2017年 Meowthra. All rights reserved.
 //  Made in Taiwan.
 
-#include <LegacyIOService.h>
+#include <IOKit/IOService.h>
 
 #include <Headers/kern_api.hpp>
 #include <Headers/kern_file.hpp>

@@ -58,8 +58,9 @@
 		22C186132271430F00411952 /* vgather.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 22C186112271430F00411952 /* vgather.hpp */; };
 		22EF54812279DD5400152174 /* fma.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 22EF547F2279DD5400152174 /* fma.cpp */; };
 		22EF54822279DD5400152174 /* fma.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 22EF54802279DD5400152174 /* fma.hpp */; };
-		F80FB912266B93A10004FFAF /* libkmod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F80FB911266B93A10004FFAF /* libkmod.a */; };
-		F8D36BF4266B99B700A07D2C /* LegacyIOService.h in Headers */ = {isa = PBXBuildFile; fileRef = F8D36BF3266B99B600A07D2C /* LegacyIOService.h */; };
+		B45285D9260DD341006F84AC /* libkmod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B45285D8260DD341006F84AC /* libkmod.a */; };
+		B45285DB260DD3DA006F84AC /* kern_nvram.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B45285DA260DD3DA006F84AC /* kern_nvram.hpp */; };
+		B45285DD260DD3F7006F84AC /* kern_compat.hpp in Headers */ = {isa = PBXBuildFile; fileRef = B45285DC260DD3F7006F84AC /* kern_compat.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -128,8 +129,9 @@
 		22C186112271430F00411952 /* vgather.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vgather.hpp; sourceTree = "<group>"; };
 		22EF547F2279DD5400152174 /* fma.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fma.cpp; sourceTree = "<group>"; };
 		22EF54802279DD5400152174 /* fma.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = fma.hpp; sourceTree = "<group>"; };
-		F80FB911266B93A10004FFAF /* libkmod.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkmod.a; path = MacKernelSDK/Library/x86_64/libkmod.a; sourceTree = "<group>"; };
-		F8D36BF3266B99B600A07D2C /* LegacyIOService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LegacyIOService.h; path = LegacyIOService/LegacyIOService.h; sourceTree = "<group>"; };
+		B45285D8260DD341006F84AC /* libkmod.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkmod.a; path = MacKernelSDK/Library/x86_64/libkmod.a; sourceTree = "<group>"; };
+		B45285DA260DD3DA006F84AC /* kern_nvram.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = kern_nvram.hpp; path = Lilu.kext/Contents/Resources/Headers/kern_nvram.hpp; sourceTree = "<group>"; };
+		B45285DC260DD3F7006F84AC /* kern_compat.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = kern_compat.hpp; path = Lilu.kext/Contents/Resources/Headers/kern_compat.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F80FB912266B93A10004FFAF /* libkmod.a in Frameworks */,
+				B45285D9260DD341006F84AC /* libkmod.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +191,7 @@
 				22BEBDE31FBD9E2300679F39 /* SDK */,
 				22BEBDCA1FBD997F00679F39 /* OpcodeEmulator */,
 				22BEBDC91FBD997F00679F39 /* Products */,
-				F80FB910266B93A00004FFAF /* Frameworks */,
+				B45285D7260DD341006F84AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -228,7 +230,6 @@
 		22BEBDE41FBD9E8800679F39 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				F8D36BF3266B99B600A07D2C /* LegacyIOService.h */,
 				22BEBE001FBD9F8E00679F39 /* plugin_start.cpp */,
 			);
 			name = Library;
@@ -238,12 +239,14 @@
 			isa = PBXGroup;
 			children = (
 				22BEBDE61FBD9F5900679F39 /* kern_api.hpp */,
+				B45285DC260DD3F7006F84AC /* kern_compat.hpp */,
 				22BEBDE71FBD9F5900679F39 /* kern_compression.hpp */,
 				22BEBDE81FBD9F5900679F39 /* kern_config.hpp */,
 				22BEBDE91FBD9F5900679F39 /* kern_disasm.hpp */,
 				22BEBDEA1FBD9F5900679F39 /* kern_file.hpp */,
 				22BEBDEB1FBD9F5900679F39 /* kern_iokit.hpp */,
 				22BEBDEC1FBD9F5900679F39 /* kern_mach.hpp */,
+				B45285DA260DD3DA006F84AC /* kern_nvram.hpp */,
 				22BEBDED1FBD9F5900679F39 /* kern_patcher.hpp */,
 				22BEBDEE1FBD9F5900679F39 /* kern_policy.hpp */,
 				22BEBDEF1FBD9F5900679F39 /* kern_user.hpp */,
@@ -253,10 +256,10 @@
 			name = Headers;
 			sourceTree = "<group>";
 		};
-		F80FB910266B93A00004FFAF /* Frameworks */ = {
+		B45285D7260DD341006F84AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F80FB911266B93A10004FFAF /* libkmod.a */,
+				B45285D8260DD341006F84AC /* libkmod.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -268,7 +271,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8D36BF4266B99B700A07D2C /* LegacyIOService.h in Headers */,
 				22BEBDF51FBD9F5900679F39 /* kern_disasm.hpp in Headers */,
 				22BEBDF31FBD9F5900679F39 /* kern_compression.hpp in Headers */,
 				2239B918225B421A00EBB2EC /* vsse2.hpp in Headers */,
@@ -289,9 +291,11 @@
 				22BEBDF71FBD9F5900679F39 /* kern_iokit.hpp in Headers */,
 				22BEBDFD1FBD9F5900679F39 /* plugin_start.hpp in Headers */,
 				2239B928225B425D00EBB2EC /* vsse42.hpp in Headers */,
+				B45285DD260DD3F7006F84AC /* kern_compat.hpp in Headers */,
 				22BEBDF41FBD9F5900679F39 /* kern_config.hpp in Headers */,
 				22BEBDFB1FBD9F5900679F39 /* kern_user.hpp in Headers */,
 				22BEBDFC1FBD9F5900679F39 /* kern_util.hpp in Headers */,
+				B45285DB260DD3DA006F84AC /* kern_nvram.hpp in Headers */,
 				22BEBDF81FBD9F5900679F39 /* kern_mach.hpp in Headers */,
 				22420295225B122000C3C697 /* vsse.hpp in Headers */,
 				22420297225B12CD00C3C697 /* f16c.hpp in Headers */,
@@ -331,7 +335,7 @@
 		22BEBDBF1FBD997E00679F39 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = lvs1974;
 				TargetAttributes = {
 					22BEBDC71FBD997F00679F39 = {
@@ -342,10 +346,11 @@
 			};
 			buildConfigurationList = 22BEBDC21FBD997E00679F39 /* Build configuration list for PBXProject "OpcodeEmulator" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 22BEBDBE1FBD997E00679F39;
 			productRefGroup = 22BEBDC91FBD997F00679F39 /* Products */;
@@ -423,6 +428,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -480,6 +486,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -508,17 +515,19 @@
 		22BEBDD11FBD997F00679F39 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ANALYZER_DEADCODE_DEADSTORES = NO;
+				CLANG_ANALYZER_DIVIDE_BY_ZERO = NO;
 				CLANG_ANALYZER_NONNULL = YES_NONAGGRESSIVE;
+				CLANG_ANALYZER_NULL_DEREFERENCE = NO;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_ENABLE_MODULES = NO;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				CURRENT_PROJECT_VERSION = "$(MODULE_VERSION)";
 				DEPLOYMENT_POSTPROCESSING = YES;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = NO;
 				GCC_ENABLE_KERNEL_DEVELOPMENT = NO;
@@ -533,22 +542,16 @@
 				INFOPLIST_FILE = OpcodeEmulator/Info.plist;
 				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Lilu.kext/Contents/Resources/Library",
-					"$(PROJECT_DIR)/MacKernelSDK/Library/x86_64",
-				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Library/x86_64";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MODULE_NAME = as.lvs1974.OpcodeEmulator;
 				MODULE_START = "$(PRODUCT_NAME)_kern_start";
 				MODULE_STOP = "$(PRODUCT_NAME)_kern_stop";
 				MODULE_VERSION = 1.2.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				NEW_SETTING = "";
-				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-static";
 				PRODUCT_BUNDLE_IDENTIFIER = as.lvs1974.OpcodeEmulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Debug;
@@ -563,7 +566,7 @@
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = YES;
 				CURRENT_PROJECT_VERSION = "$(MODULE_VERSION)";
 				DEAD_CODE_STRIPPING = YES;
@@ -582,20 +585,13 @@
 				INFOPLIST_FILE = OpcodeEmulator/Info.plist;
 				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Lilu.kext/Contents/Resources/Library",
-					"$(PROJECT_DIR)/MacKernelSDK/Library/x86_64",
-				);
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Library/x86_64";
 				LLVM_LTO = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MODULE_NAME = as.lvs1974.OpcodeEmulator;
 				MODULE_START = "$(PRODUCT_NAME)_kern_start";
 				MODULE_STOP = "$(PRODUCT_NAME)_kern_stop";
 				MODULE_VERSION = 1.2.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				NEW_SETTING = "";
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-static";
 				PRODUCT_BUNDLE_IDENTIFIER = as.lvs1974.OpcodeEmulator;
 				PRODUCT_NAME = "$(TARGET_NAME)";

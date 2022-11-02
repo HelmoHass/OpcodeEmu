@@ -37,7 +37,7 @@ PluginConfiguration ADDPR(config) {
     config.bootargBeta,
     arrsize(config.bootargBeta),
     KernelVersion::MountainLion,
-    KernelVersion::Mojave,
+    KernelVersion::BigSur,
     []() {
         opemu.init();
     }
