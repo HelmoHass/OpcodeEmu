@@ -23,13 +23,13 @@ To Compile
 
 `cd ..`
 
-`git clone https://github.com/HelmoHass/Opcode-Emu`
+`git clone https://github.com/HelmoHass/OpcodeEmu`
 
-`cp -Rf $HOME/Lilu/build/Debug/Lilu.kext $HOME/Opcode-Emu`
+`cp -Rf $HOME/Lilu/build/Debug/Lilu.kext $HOME/OpcodeEmu`
 
 `cp -Rf $HOME/Lilu/MacKernelSDK $HOME/Opcode-Emu`
 
-`cd Opcode-Emu && git clone https://github.com/acidanthera/MacKernelSDK`
+`cd OpcodeEmu && git clone https://github.com/acidanthera/MacKernelSDK`
 
 `xcodebuild -project ./OpcodeEmulator.xcodeproj -configuration Release clean build ARCHS=x86_64 ONLY_ACTIVE_ARCH=YES`
 #
